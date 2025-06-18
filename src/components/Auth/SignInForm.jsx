@@ -24,7 +24,7 @@ export default function SignInForm() {
               setLoginMessage("Login successful!");
               setTimeout(() => {
                 setLoginMessage("");
-                router.push('/resumeUpload');
+                router.push('/dashboard');
               }, 2000);
           } else {
             alert(`${res?.message}`)
