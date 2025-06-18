@@ -13,12 +13,12 @@ export default function VerifyEmailForm({ onSubmit, buttonText }) {
 
  const handleChange = (e) => {
     const value = e.target.value.replace(/\D/g, ""); // Allow digits only
-    if (value.length <= 4) setCode(value);
+    if (value.length <= 6) setCode(value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (code.length === 4) {
+    if (code.length === 6) {
       onSubmit({ code });
     }
   };
@@ -34,11 +34,11 @@ export default function VerifyEmailForm({ onSubmit, buttonText }) {
         <input
             type="text"
             inputMode="numeric"
-            maxLength={4}
+            maxLength={6}
             value={code}
             onChange={handleChange}
             ref={inputRef}
-            placeholder="****"
+            placeholder="******"
             className="verify-input text-center w-25 h-12 rounded bg-background text-xl font-medium focus:outline-none focus:ring-0"
           />
       </div>
@@ -46,7 +46,7 @@ export default function VerifyEmailForm({ onSubmit, buttonText }) {
       <button
         type="submit"
         className="w-full bg-black text-white py-[12px] px-[40px] font-sans rounded"
-        disabled={code.length !== 4}
+        disabled={code.length !== 6}
       >
         {buttonText}
       </button>
