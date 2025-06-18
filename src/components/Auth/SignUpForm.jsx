@@ -1,6 +1,6 @@
 "use client";
 
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { signUpUser } from '../../../apiService'
 
@@ -10,6 +10,8 @@ export default function SignUpForm() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false)
 
+  const router = useRouter()
+
   
   
     const onSubmit = async (e) => {
@@ -18,7 +20,7 @@ export default function SignUpForm() {
         const res = await signUpUser( fullName, email, password )
         if (res.status === true) {
           localStorage.setItem('verifyEmail', email);
-          redirect('/verifyEmail')
+          router.push('/verifyEmail')
         } else {
           alert(`${res?.message}`)
         }
