@@ -9,7 +9,7 @@ export default function SignInPage() {
 
   return (
     <PageWrapper>
-      <div className="flex justify-between">
+      <div className="flex gap-[72px] justify-between">
         <div className="py-[80px]">
             <div>
                 <h1 className="font-heading text-headings tracking-tightest">It's nice to have you back</h1>
