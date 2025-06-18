@@ -30,7 +30,7 @@ export default function ResetPasswordForm() {
           router.push('/dashboard');
         }, 2000);
     } else {
-      alert('Error')
+      alert(`${res.message}`)
     }
   }
   
